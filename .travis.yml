@@ -4,9 +4,11 @@ env:
     - CC_TEST_REPORTER_ID=e707e5686481e04d6c46431f003efb49b8fbf31c4f9c2a583db99ae7b58a2774
 language: python
 python:
+  - "3.5"
   - "3.6"
 install:
   - pip install -r requirements.txt
+  - pip install tox
   - paver develop
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
