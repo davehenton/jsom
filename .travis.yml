@@ -1,4 +1,7 @@
 sudo: false
+env:
+  global:
+    - CC_TEST_REPORTER_ID=e707e5686481e04d6c46431f003efb49b8fbf31c4f9c2a583db99ae7b58a2774
 language: python
 python:
   - "3.5"
@@ -13,4 +16,4 @@ before_script:
 script:
   - tox
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
