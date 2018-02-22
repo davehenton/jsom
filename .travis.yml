@@ -8,7 +8,6 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
-  - pip install tox
   - paver develop
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -16,5 +15,6 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - tox
+  - coverage run
 after_script:
   - ./cc-test-reporter after-build cc-test-reporter --input-type coverage.py --debug --exit-code $TRAVIS_TEST_RESULT
