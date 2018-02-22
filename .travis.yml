@@ -15,7 +15,7 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - tox
-  - coverage run pytest.ini
+  - coverage run
   - coverage report -m
 after_script:
   - ./cc-test-reporter after-build cc-test-reporter --input-type coverage.py --debug --exit-code $TRAVIS_TEST_RESULT
